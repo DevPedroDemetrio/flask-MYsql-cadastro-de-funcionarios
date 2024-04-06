@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder="./templates")
 
-username = 'root'#nome do usuario mysql
-senha = '12345'#senha do usuario mysql
+username = 'root'#nome do seu usuario mysql
+senha = '532637'#senha do seu usuario mysql
 server= 'localhost'#servidor sendo usado
-db = 'MYFLASK'#nome do banco de dados
+db = 'my_flask'#nome do seu banco de dados
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{username}:{senha}@{server}/{db}'
 
