@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center;">Cadastro de Funcionarios</h2>
+<hr>
+<br>
+<br>
+<form action="{{ url_for('cadastro')}}" method="POST" class="form-controll">
+    <label>Nome do Curso</label>
+    <input class="form-control" type="text" name="nome" placeholder="Escreva nome do Funcionario" required>
+    <label>Descrição</label>
+    <input class="form-control" type="email" name="email" placeholder="Email do Funcionario" required>
+    <button class="btn btn-success">Cadastrar</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<a href="{{ url_for('index')}}" class="btn btn-danger">Voltar</a>
+{% endblock conteudo %}
+

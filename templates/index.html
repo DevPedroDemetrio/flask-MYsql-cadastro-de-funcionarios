@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block head %}
+ <style>
+    /* Altura total da viewport */
+    html, body {
+        height: 100%;
+    }
+    /* Classe para centralizar o card vertical e horizontalmente */
+    .centralizado {
+        min-height: 100%; /* Altura mínima para a viewport */
+        display: flex;
+        align-items: center; /* Alinha itens verticalmente */
+        justify-content: center; /* Alinha itens horizontalmente */
+    }
+</style>
+
+<title>cadastro</title>
+
+{% endblock head %}
+{% block conteudo %}
+<div class="centralizado">
+  <div class="card" style="width: 18rem;">
+    <img src="{{ url_for('static', filename='cadastro.jpeg')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Cadastro de Funcionarios</h5>
+      <p class="card-text">Aplicação de cadastro de Funcionario escolha a baixo suas opções</p>
+      <a href="{{ url_for('cadastrar') }}" class="btn btn-info">Cadastrar</a>
+      <a href="{{ url_for('lista') }}" class="btn btn-info" >Lista de cadastros</a>
+    </div>
+  </div>
+{% endblock conteudo %}
+

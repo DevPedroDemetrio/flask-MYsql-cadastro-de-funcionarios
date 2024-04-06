@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center;">Lista de Funcionarios</h2>
+<hr>
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Email</th>
+    <th scope="col">Ações</th>
+    </tr>
+    </thead>
+<tbody>
+    {% for funcionario in funcionarios %}
+        <tr>
+            <td>{{ funcionario._id }}</td>
+            <td>{{ funcionario.nome }}</td>
+            <td>{{ funcionario.email }}</td>
+            <td>
+            <a href="{{ funcionario._id }}/excluir" onclick="return confirm('Deseja mesmo excluir esse item?')" class="btn btn-warning btn-xs">Excluir</a>
+            </td>
+                <td><a href="{{ funcionario._id }}/atualizar" class="btn btn-dark btn-xs">Atualizar</a></td>
+            </tr>
+    {% endfor %}
+    </tbody>
+   </table>
+<br>
+<br>
+<br>
+<br>
+<a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+{% endblock conteudo %}

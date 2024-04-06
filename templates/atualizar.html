@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+ <h2 style="text-align:center;">Atualizar Cadastro</h2>
+ <hr>
+<form action="{{ url_for('atualizar', _id=funcionario._id)}}" method="POST" class="form-controll">
+    <label>Nome</label>
+    <input class="form-control" name="nome" type="text" value="{{ funcionario.nome }}" required>
+    <label>Email</label>
+    <input class="form-control" name="email" type="Email" value="{{ funcionario.email }}" required>
+    <button class="btn btn-success">Atualizar</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<a class="btn btn-danger" href="{{ url_for('lista') }}">Voltar</a>
+{% endblock conteudo %}
